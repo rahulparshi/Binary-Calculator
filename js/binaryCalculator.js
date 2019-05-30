@@ -31,11 +31,17 @@ btns.addEventListener("click", function(e) {
   if (char === "C") {
     res.innerHTML = "";
     operator = null;
+    document.querySelectorAll(".operator").forEach(btn => {
+      btn.disabled = false;
+    });
   } else if (char === "=") {
     res.innerHTML = calculate(res.innerHTML);
   } else {
     if (operators.includes(char)) {
       operator = char;
+      document.querySelectorAll(".operator").forEach(btn => {
+        btn.disabled = true;
+      });
     }
     res.innerHTML += char;
   }
