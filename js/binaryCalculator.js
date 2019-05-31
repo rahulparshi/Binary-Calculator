@@ -36,6 +36,9 @@ btns.addEventListener("click", function(e) {
     });
   } else if (char === "=") {
     res.innerHTML = calculate(res.innerHTML);
+    document.querySelectorAll(".operator").forEach(btn => {
+      btn.disabled = false;
+    });
   } else {
     if (operators.includes(char)) {
       operator = char;
